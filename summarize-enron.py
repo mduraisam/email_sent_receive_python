@@ -5,7 +5,7 @@ import time
 import operator
 import collections
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as mplot
 import matplotlib.mlab as mlab
 
 #Variable declaration
@@ -148,38 +148,38 @@ receivedCount = uniqueReceivedCountOverTime.values()
 
 
 #Show in image
-receivingFigure = plt.figure("Unique Email Receiving Count For Each Six Months")
-plt.figure(1, figsize = (8.5,11))
-axes = plt.gca()
+receivingFigure = mplot.figure("Unique Email Receiving Count For Each Six Months")
+mplot.figure(1, figsize = (8.5,11))
+axes = mplot.gca()
 axes.set_xlim([-2,11])
 axes.set_ylim([-2,300])
 yticks = np.arange(-2, 300, 10)
-plt.xticks(range(10), xAxisName)
-plt.yticks(yticks)
-plt.plot(range(10), receivedCount[0], 'b-', label = received[0])
-plt.plot(range(10), receivedCount[1], 'r-', label = received[1])
-plt.plot(range(10), receivedCount[2], 'g-', label = received[2])
-plt.plot(range(10), receivedCount[3], 'y-', label = received[3])
-plt.plot(range(10), receivedCount[4], 'm-', label = received[4])
-plt.legend()
-plt.xlabel('Duration(Six Months)')
-plt.ylabel('Receiving Count')
+mplot.xticks(range(10), xAxisName)
+mplot.yticks(yticks)
+mplot.plot(range(10), receivedCount[0], 'b-', label = received[0])
+mplot.plot(range(10), receivedCount[1], 'r-', label = received[1])
+mplot.plot(range(10), receivedCount[2], 'g-', label = received[2])
+mplot.plot(range(10), receivedCount[3], 'y-', label = received[3])
+mplot.plot(range(10), receivedCount[4], 'm-', label = received[4])
+mplot.legend()
+mplot.xlabel('Duration(Six Months)')
+mplot.ylabel('Receiving Count')
 
-sendingFigure = plt.figure("Sending Email Count For Each Six Months")
-axes = plt.gca()
+sendingFigure = mplot.figure("Sending Email Count For Each Six Months")
+axes = mplot.gca()
 axes.set_xlim([-2,11])
 axes.set_ylim([-2,7500])
 yticks = np.arange(-2, 7500, 1000)
-plt.xticks(range(10), xAxisName)
-plt.yticks(yticks)
-plt.plot(range(10), sendCount[0], 'b-', label = send[0])
-plt.plot(range(10), sendCount[1], 'r-', label = send[1])
-plt.plot(range(10), sendCount[2], 'g-', label = send[2])
-plt.plot(range(10), sendCount[3], 'y-', label = send[3])
-plt.plot(range(10), sendCount[4], 'm-', label = send[4])
-plt.legend()
-plt.xlabel('Duration(Six Months)')
-plt.ylabel('Sending Count')
+mplot.xticks(range(10), xAxisName)
+mplot.yticks(yticks)
+mplot.plot(range(10), sendCount[0], 'b-', label = send[0])
+mplot.plot(range(10), sendCount[1], 'r-', label = send[1])
+mplot.plot(range(10), sendCount[2], 'g-', label = send[2])
+mplot.plot(range(10), sendCount[3], 'y-', label = send[3])
+mplot.plot(range(10), sendCount[4], 'm-', label = send[4])
+mplot.legend()
+mplot.xlabel('Duration(Six Months)')
+mplot.ylabel('Sending Count')
 
 #Saving the image file
 receivingFigure.savefig("Unique Email Receiving Count For Each Six Months", dpi=1000)
